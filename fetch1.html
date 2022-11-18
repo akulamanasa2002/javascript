@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		fetch("https://reqres.in/api/users",{
+			method:"POST",
+			headers:{
+				"Content-Type":"application/json"
+			},
+			body:JSON.stringify({name:"ravi",age:24,gender:"male"})
+		})
+          .then((res)=>{
+          	console.log(res)
+          	if(res.status===201){
+          		alert("data added succerssfully")
+          	}
+          	return res.json()
+          })
+          .then((update)=>{
+          	console.log(update)
+          }) 
+
+
+	</script>
+
+</body>
+</html>
