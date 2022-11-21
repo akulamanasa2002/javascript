@@ -34,6 +34,8 @@
 	</style>	
 </head>
 <body>
+	<p id="demo"></p>
+	<p id="demo1"></p>
 	<div class="app">
 	<input  class="name" type="text" placeholder="Enter a todo" id="new">
 	<ul>
@@ -52,6 +54,9 @@
 				add(newTodo)
 			}
 			document.getElementById("new").value=""
+			const d = new Date();
+           document.getElementById("demo").innerHTML = d.getHours();
+          document.getElementById("demo1").innerHTML = d.getMinutes();
 		}
 		function add(newValue){
 			let ul=document.querySelector("ul")
@@ -59,11 +64,13 @@
 			let li=document.createElement("li");
 			li.innerHTML=`
 			<span class="listvalue">${newValue}</span>
-			<i class="fa-solid fa-square-xmark"></i>
+			 <button name="checkButton"><i class="fas fa-check-square"></i></button>
+        <button name="deleteButton" ><i class="fas fa-trash"></i></button>
 			`
 			li.classList.add("listtype")
 			ul.appendChild(li)
 		}
+		
 	</script>
 
 </body>
